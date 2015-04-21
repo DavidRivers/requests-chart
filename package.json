@@ -1,0 +1,57 @@
+{
+  "name": "requests-chart",
+  "version": "1.0.0",
+  "description": "Code sample to visualize different categories of HTTP requests.",
+  "main": "bundle.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {
+    "highcharts": "^0.0.8"
+  },
+  "devDependencies": {
+    "browserify": "^9.0.8",
+    "coffee-script": "^1.9.2",
+    "coffeeify": "^1.0.0",
+    "gulp": "^3.8.11",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-util": "^3.0.4",
+    "jade": "^1.9.2",
+    "jadeify": "^4.2.0",
+    "lessify": "^1.0.1",
+    "less": "^2.5.0",
+    "lodash.assign": "^3.1.0",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.1.2"
+  },
+  "browserify": {
+    "transform": [
+      "coffeeify",
+      "jadeify",
+      "lessify"
+    ]
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DavidRivers/requests-chart"
+  },
+  "keywords": [
+    "code",
+    "sample",
+    "highcharts",
+    "coffeescript",
+    "jade",
+    "less",
+    "browserify"
+  ],
+  "author": "David Rivers",
+  "license": "BSD-3",
+  "bugs": {
+    "url": "https://github.com/DavidRivers/requests-chart/issues"
+  },
+  "homepage": "https://github.com/DavidRivers/requests-chart"
+}

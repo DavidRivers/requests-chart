@@ -1,0 +1,19 @@
+Front End Technical Assessment
+
+Create a github.com repository (can be public) for this assessment.
+
+ Using the provided data source (JSON) create a time series chart with Highcharts. The chart will contain the four series named below:
+ Human requests
+ Good Bot requests
+ Bad Bot requests
+ Whitelist requests
+
+ Create a form with an input that accepts an integer value, an input for a date and radio buttons to choose which series the new data point will be associated. Submitting the form will plot the integer dynamically on the time series chart for the selected series.
+
+Requirements:
+ No JavaScript frameworks or libraries. 
+ Highcharts.com is allowed
+ jQuery is a requirement for Highcharts but cannot be used for part 2
+ Can use JavaScript or Coffeescript (bonus points for Coffeescript, that's what we use)
+ Must work in latest versions of Chrome, Firefox, Safari and IE10+
+ Bonus points for a well designed layout and form.
