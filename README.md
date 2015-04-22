@@ -20,6 +20,7 @@
 
 ## TODO
 
+* fix CSS layout issue in Firefox (looks like chart may need to load after stylesheeet does)
 * remove jade and jadeify dependencies if not going to be used
 * figure out how to manage highcharts adapter dependency with package.json (the adapter wasn't found in the npm module) so I can remove the bower_components dir
 * Add es5-shim for greater forEach compatibility (IE < 9)

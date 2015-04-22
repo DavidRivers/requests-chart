@@ -1,13 +1,18 @@
 @import "node_modules/bootstrap/less/bootstrap.less";
 @import "//fonts.googleapis.com/css?family=Open+Sans:700,400";
 
-body, text, tspan { font-family: "Open Sans", sans-serif; }
+// Typography
+
+body, text, tspan {
+	font-family: "Open Sans", sans-serif;
+}
 
 legend {
 	font-size: 14px;
 	font-weight: bold;
-	margin-bottom: 5px;
 }
+
+// Layout
 
 body {
 	&:extend(.container-fluid all);
@@ -21,4 +26,8 @@ body {
 #form {
 	&:extend(.well all);
 	.make-sm-column(4; @gutter: 30px);
+}
+
+legend {
+	margin-bottom: 5px;
 }
