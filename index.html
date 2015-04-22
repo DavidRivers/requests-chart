@@ -2,27 +2,27 @@
 <html lang="en" ng-app="movieExplorer">
 	<head>
 		<title>Requests Chart</title>
-		<meta charset="utf-8"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-		<meta name="description" content="Code sample to visualize different categories of HTTP requests. Uses Highcharts, CoffeeScript, Jade, Less, and Browserify."/>
-		<meta name="keywords" content="code sample, highcharts, coffeescript, jade, less, browserify"/>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Code sample to visualize different categories of HTTP requests. Uses Highcharts, CoffeeScript, Jade, Less, and Browserify.">
+		<meta name="keywords" content="code sample, highcharts, coffeescript, jade, less, browserify">
 		<script src="dist/bundle.js"></script>
 	</head>
 	<body>
 		<div id="chart"></div>
 		<form id="form">
 			<legend>Plot a new Request Point</legend>
-			<input name="integer" type="number"/>
-			<input name="date" type="date"/>
-			<input id="human" name="series" value="human" type="radio"/>
+			<input name="requests" type="number" required>
+			<input name="date" type="date" required>
+			<input id="human" value="1" name="series" value="human" type="radio" required>
 			<label for="human">Human</label>
-			<input id="good_bot" name="series" value="good_bot" type="radio"/>
+			<input id="good_bot" value="2" name="series" value="good_bot" type="radio" required>
 			<label for="good_bot">Good Bot</label>
-			<input id="bad_bot" name="series" value="bad_bot" type="radio"/>
+			<input id="bad_bot" value="3" name="series" value="bad_bot" type="radio" required>
 			<label for="bad_bot">Bad Bot</label>
-			<input id="whitelist" name="series" value="whitelist" type="radio"/>
+			<input id="whitelist" value="4" name="series" value="whitelist" type="radio" required>
 			<label for="whitelist">Whitelist</label>
-			<input type="submit" value="Plot" />
+			<input type="submit" value="Plot">
 		</form>
 	</body>
 </html>
