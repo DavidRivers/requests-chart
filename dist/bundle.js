@@ -52,7 +52,7 @@ dailyRequestSamples.forEach(function(entry) {
   }
 });
 
-document.addEventListener("DOMContentLoaded", function() {
+window.addEventListener("load", function() {
   var chart;
   chart = new Highcharts.Chart({
     chart: {

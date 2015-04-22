@@ -21,7 +21,7 @@ dailyRequestSamples.forEach (entry) ->
 	whitelistSeries.push {x: dateToUTC(entry.summary_date), y: entry.whitelist_total } if entry.whitelist_total
 	return;
 
-document.addEventListener "DOMContentLoaded", () ->
+window.addEventListener "load", () ->
 	chart = new (Highcharts.Chart)(
 		chart:
 			renderTo: document.getElementById "chart"
