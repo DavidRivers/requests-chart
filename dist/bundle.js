@@ -1,11 +1,11 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-var badBotSeries, dailySamples, dateToUTC, goodBotSeries, humanSeries, startDate, whitelistSeries;
+var badBotSeries, dailyRequestSamples, dateToUTC, goodBotSeries, humanSeries, startDate, whitelistSeries;
 
 require("../styles/main.less");
 
 require("Highcharts");
 
-dailySamples = require("../data/categorized_domain_requests.json").categorized_domain_requests;
+dailyRequestSamples = require("../data/categorized_domain_requests.json").categorized_domain_requests;
 
 dateToUTC = function(date) {
   var day, month, year;
@@ -23,13 +23,33 @@ badBotSeries = [];
 
 whitelistSeries = [];
 
-startDate = dateToUTC(dailySamples[0].summary_date);
+startDate = dateToUTC(dailyRequestSamples[0].summary_date);
 
-dailySamples.forEach(function(entry) {
-  humanSeries.push(entry.human_total);
-  goodBotSeries.push(entry.good_bot_total);
-  badBotSeries.push(entry.bad_bot_total);
-  whitelistSeries.push(entry.whitelist_total);
+dailyRequestSamples.forEach(function(entry) {
+  if (entry.human_total) {
+    humanSeries.push({
+      x: dateToUTC(entry.summary_date),
+      y: entry.human_total
+    });
+  }
+  if (entry.good_bot_total) {
+    goodBotSeries.push({
+      x: dateToUTC(entry.summary_date),
+      y: entry.good_bot_total
+    });
+  }
+  if (entry.bad_bot_total) {
+    badBotSeries.push({
+      x: dateToUTC(entry.summary_date),
+      y: entry.bad_bot_total
+    });
+  }
+  if (entry.whitelist_total) {
+    whitelistSeries.push({
+      x: dateToUTC(entry.summary_date),
+      y: entry.whitelist_total
+    });
+  }
 });
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -52,11 +72,6 @@ document.addEventListener("DOMContentLoaded", function() {
     yAxis: {
       title: {
         text: "Domain Requests"
-      }
-    },
-    plotOptions: {
-      series: {
-        pointStart: startDate
       }
     },
     series: [

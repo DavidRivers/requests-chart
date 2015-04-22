@@ -1,6 +1,6 @@
 require "../styles/main.less"
 require "Highcharts" # Pollutes global scope. Bad like a bad bot!
-dailySamples = require("../data/categorized_domain_requests.json").categorized_domain_requests
+dailyRequestSamples = require("../data/categorized_domain_requests.json").categorized_domain_requests
 
 dateToUTC = (date) ->
 	year = date.split("-")[0]
@@ -12,13 +12,13 @@ humanSeries = []
 goodBotSeries = []
 badBotSeries = []
 whitelistSeries = []
-startDate = dateToUTC(dailySamples[0].summary_date)
+startDate = dateToUTC(dailyRequestSamples[0].summary_date)
 
-dailySamples.forEach (entry) ->
-	humanSeries.push entry.human_total
-	goodBotSeries.push entry.good_bot_total
-	badBotSeries.push entry.bad_bot_total
-	whitelistSeries.push entry.whitelist_total
+dailyRequestSamples.forEach (entry) ->
+	humanSeries.push {x: dateToUTC(entry.summary_date), y: entry.human_total } if entry.human_total
+	goodBotSeries.push {x: dateToUTC(entry.summary_date), y: entry.good_bot_total } if entry.good_bot_total
+	badBotSeries.push {x: dateToUTC(entry.summary_date), y: entry.bad_bot_total } if entry.bad_bot_total
+	whitelistSeries.push {x: dateToUTC(entry.summary_date), y: entry.whitelist_total } if entry.whitelist_total
 	return;
 
 document.addEventListener "DOMContentLoaded", () ->
@@ -33,8 +33,6 @@ document.addEventListener "DOMContentLoaded", () ->
 			dateTimeLabelFormats: { day: "%b %e, %Y" }
 		yAxis:
 			title: { text: "Domain Requests" }
-		plotOptions:
-			series: { pointStart: startDate }
 		series: [
 			{ id: 1, name: "Humans", color: "#000", data: humanSeries, pointInterval: 24 * 3600 * 1000 }
 			{ id: 2, name: "Good Bots", color: "green", data: goodBotSeries, pointInterval: 24 * 3600 * 1000  }
