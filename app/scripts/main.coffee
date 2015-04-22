@@ -1,4 +1,5 @@
 require "../styles/main.less"
+require "es5-shim" # For forEach usage
 require "Highcharts" # Pollutes global scope. Bad like a bad bot!
 dailyRequestSamples = require("../data/categorized_domain_requests.json").categorized_domain_requests
 
