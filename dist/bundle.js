@@ -103,9 +103,10 @@ document.addEventListener("DOMContentLoaded", function() {
       }
       i++;
     }
-    if (seriesID && requestsValue && requestsDate) {
-      return chart.get(seriesID).addPoint(requestsValue);
-    }
+    return chart.get(seriesID).addPoint({
+      x: requestsDate,
+      y: requestsValue
+    });
   });
 });
 

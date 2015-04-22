@@ -11,9 +11,9 @@
 	<body>
 		<div id="chart"></div>
 		<form id="form">
-			<legend>Plot a new Request Point</legend>
-			<input name="requests" type="number" required>
-			<input name="date" type="date" required>
+			<legend>Plot a New Requests Datum</legend>
+			<input name="requests" type="number" placeholder="# of Requests" required>
+			<input name="date" type="date" placeholder="2015-1-05" pattern="\d{4}-\d{1,2}-\d{1,2}" required>
 			<input id="human" value="1" name="series" value="human" type="radio" required>
 			<label for="human">Human</label>
 			<input id="good_bot" value="2" name="series" value="good_bot" type="radio" required>

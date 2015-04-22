@@ -10,6 +10,8 @@
 
 * Assumes that the first object in the JSON array is the earliest date and that each object is at a one-day interval. A potential improvement would be to remove this potential point of failure.
 * Add subtitle to instruct user to either click and drag or pinch to zoom (Couldn't figure out the CoffeeScript syntax to set the value of the "subtitle" key to be a lambda containing a ternary)
+* Validate pattern (attribute) for dates could be more complete
+* Maybe add &lt;label&gt;s (use persist-placeholder?)
 
 ## TODO
 

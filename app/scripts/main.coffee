@@ -58,4 +58,4 @@ document.addEventListener "DOMContentLoaded", () ->
 				break
 			i++
 
-		chart.get(seriesID).addPoint requestsValue if seriesID && requestsValue && requestsDate
+		chart.get(seriesID).addPoint({x: requestsDate, y: requestsValue})
