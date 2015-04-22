@@ -1,0 +1,24 @@
+@import "node_modules/bootstrap/less/bootstrap.less";
+@import "//fonts.googleapis.com/css?family=Open+Sans:700,400";
+
+body, text, tspan { font-family: "Open Sans", sans-serif; }
+
+legend {
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+body {
+	&:extend(.container-fluid all);
+	margin: 15px 0;
+}
+
+.chart-container {
+	.make-sm-column(8; @gutter: 30px);
+}
+
+#form {
+	&:extend(.well all);
+	.make-sm-column(4; @gutter: 30px);
+}

@@ -13,6 +13,11 @@
 * Validate pattern (attribute) for dates could be more complete
 * Maybe add &lt;label&gt;s (use persist-placeholder?)
 
+## Issues with Highcharts
+
+* Expects global variables
+* Allows plotting of multiple duplicate points (same x and y on same series). Perhaps this is acceptable or desired?
+
 ## TODO
 
 * remove jade and jadeify dependencies if not going to be used

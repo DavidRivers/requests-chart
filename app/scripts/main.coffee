@@ -40,13 +40,13 @@ document.addEventListener "DOMContentLoaded", () ->
 			{ id: 1, name: "Humans", color: "#000", data: humanSeries, pointInterval: 24 * 3600 * 1000 }
 			{ id: 2, name: "Good Bots", color: "green", data: goodBotSeries, pointInterval: 24 * 3600 * 1000  }
 			{ id: 3, name: "Bad Bots", color: "red", data: badBotSeries, pointInterval: 24 * 3600 * 1000 }
-			{ id: 4, name: "Whitelisted", color: "#ccc", data: whitelistSeries, pointInterval: 24 * 3600 * 1000  } ])
+			{ id: 4, name: "Whitelist", color: "#ccc", data: whitelistSeries, pointInterval: 24 * 3600 * 1000  } ])
 	
 	document.getElementById("form").addEventListener "submit", (evt) ->
 		evt.preventDefault()
 
-		requestsValue = parseInt document.getElementsByName("requests")[0].value
-		requestsDate = dateToUTC document.getElementsByName("date")[0].value
+		requestsValue = parseInt document.getElementById("requests").value
+		requestsDate = dateToUTC document.getElementById("date").value
 
 		seriesID
 		seriesRadios = document.getElementsByName "series"

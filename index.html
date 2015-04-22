@@ -9,20 +9,34 @@
 		<script src="dist/bundle.js"></script>
 	</head>
 	<body>
-		<div id="chart"></div>
+		<div class="chart-container">
+			<div id="chart"></div>
+		</div>
 		<form id="form">
-			<legend>Plot a New Requests Datum</legend>
-			<input name="requests" type="number" placeholder="# of Requests" required>
-			<input name="date" type="date" placeholder="2015-1-05" pattern="\d{4}-\d{1,2}-\d{1,2}" required>
-			<input id="human" value="1" name="series" value="human" type="radio" required>
-			<label for="human">Human</label>
-			<input id="good_bot" value="2" name="series" value="good_bot" type="radio" required>
-			<label for="good_bot">Good Bot</label>
-			<input id="bad_bot" value="3" name="series" value="bad_bot" type="radio" required>
-			<label for="bad_bot">Bad Bot</label>
-			<input id="whitelist" value="4" name="series" value="whitelist" type="radio" required>
-			<label for="whitelist">Whitelist</label>
-			<input type="submit" value="Plot">
+			<div class="form-group">
+				<label for="requests">Sample Size</label>
+				<input id="requests" type="number" placeholder="3223" required class="form-control">
+			</div>
+			<div class="form-group">
+				<label for="date">Date</label>
+				<input id="date" type="date" placeholder="2015-1-05" pattern="\d{4}-\d{1,2}-\d{1,2}" required class="form-control">
+			</div>
+			<fieldset class="form-group">
+				<legend>Category</legend>
+				<label class="radio-inline">
+					<input value="1" name="series" value="human" type="radio" required> Humans
+				</label>
+				<label class="radio-inline">
+					<input value="2" name="series" value="good_bot" type="radio" required> Good Bots
+				</label>
+				<label class="radio-inline">
+					<input value="3" name="series" value="bad_bot" type="radio" required> Bad Bots
+				</label>
+				<label class="radio-inline">
+					<input id="whitelist" value="4" name="series" value="whitelist" type="radio" required> Whitelist
+				</label>
+			</fieldset>
+			<input type="submit" value="Plot" class="btn btn-default">
 		</form>
 	</body>
 </html>
