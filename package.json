@@ -7,6 +7,7 @@
     "doc": "docs"
   },
   "dependencies": {
+    "bootstrap": "^3.3.4"
   },
   "devDependencies": {
     "browserify": "^9.0.8",
@@ -16,8 +17,6 @@
     "gulp": "^3.8.11",
     "gulp-sourcemaps": "^1.5.2",
     "gulp-util": "^3.0.4",
-    "jade": "^1.9.2",
-    "jadeify": "^4.2.0",
     "lessify": "^1.0.1",
     "less": "^2.5.0",
     "lodash.assign": "^3.1.0",
@@ -31,19 +30,20 @@
   },
   "browserify": {
     "transform": [
-	  "browserify-shim",
+      "browserify-shim",
       "coffeeify",
-      "jadeify",
       "lessify"
     ]
   },
   "browserify-shim": {
     "Highcharts": {
-      "depends": ["HighchartsAdapter:HighchartsAdapter"]
+      "depends": [
+        "HighchartsAdapter:HighchartsAdapter"
+      ]
     },
     "HighchartsAdapter": {
-      "exports":"HighchartsAdapter"
-	}
+      "exports": "HighchartsAdapter"
+    }
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -57,7 +57,6 @@
     "sample",
     "highcharts",
     "coffeescript",
-    "jade",
     "less",
     "browserify"
   ],
