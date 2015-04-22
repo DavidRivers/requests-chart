@@ -1,11 +1,6 @@
 require "../styles/main.less"
 require "Highcharts" # Pollutes global scope. Bad like a bad bot!
-
-days = require("../data/categorized_domain_requests.json").categorized_domain_requests
-humanSeries = []
-goodBotSeries = []
-badBotSeries = []
-whitelistSeries = []
+dailySamples = require("../data/categorized_domain_requests.json").categorized_domain_requests
 
 dateToUTC = (date) ->
 	year = date.split("-")[0]
@@ -13,9 +8,13 @@ dateToUTC = (date) ->
 	day = parseInt(date.split("-")[2])
 	Date.UTC(year, month, day)
 
-startDate = dateToUTC(days[0].summary_date)
+humanSeries = []
+goodBotSeries = []
+badBotSeries = []
+whitelistSeries = []
+startDate = dateToUTC(dailySamples[0].summary_date)
 
-days.forEach (entry) ->
+dailySamples.forEach (entry) ->
 	humanSeries.push entry.human_total
 	goodBotSeries.push entry.good_bot_total
 	badBotSeries.push entry.bad_bot_total
